@@ -12,6 +12,7 @@
     ../../hosts/global/oci-containers/immich.nix
     ../../hosts/global/oci-containers/kavita.nix
     ../../hosts/global/oci-containers/syncthing.nix
+    ../../hosts/global/oci-containers/watchtower.nix
   ];
 
 }
