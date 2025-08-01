@@ -21,10 +21,24 @@
     options = [ "noatime" "fmask=0077" "dmask=0077" ];
   };
 
+  zramSwap.enable = true;
+
   swapDevices = [
     {
       device = "/dev/disk/by-uuid/738598d3-dc3a-41f9-9746-a08c9e80a80b";
     }
   ];
+
+  # NFS setup
+
+  fileSystems."/export/torrent" = {
+    device = "/data/downloads";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/export/random" = {
+    device = "/data/random";
+    options = [ "bind" ];
+  };
     
 }
