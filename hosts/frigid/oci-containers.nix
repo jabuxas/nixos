@@ -13,7 +13,7 @@
     ../../hosts/global/oci-containers/kavita.nix
     ../../hosts/global/oci-containers/syncthing.nix
     ../../hosts/global/oci-containers/watchtower.nix
-    ../../hosts/global/oci-containers/calibre.nix
+    # ../../hosts/global/oci-containers/calibre.nix
   ];
 
 }
