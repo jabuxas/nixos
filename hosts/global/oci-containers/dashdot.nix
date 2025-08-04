@@ -11,7 +11,13 @@
 
   # Containers
   virtualisation.oci-containers.containers."dashdot-dash" = {
-    image = "mauricenino/dashdot:latest";
+    image = "dashdot_local";
+    environment = {
+      "DASHDOT_ENABLE_CPU_TEMPS" = "true";
+      "DASHDOT_FS_DEVICE_FILTER" = "mmcblk0boot0,mmcblk0boot1";
+      "DASHDOT_SHOW_HOST" = "true";
+      "DASHDOT_WIDGET_LIST" = "os,cpu,storage,ram,network";
+    };
     volumes = [
       "/:/mnt/host:ro"
     ];
