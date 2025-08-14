@@ -8,6 +8,14 @@
     };
   };
 
+  services.tailscale = {
+    enable = true;
+    authKeyFile = "/data/tailscale/keyfile";
+    useRoutingFeatures = "server";
+    openFirewall = true;
+    extraUpFlags = [ "--advertise-exit-node" ];
+  };
+
   users.users.you.openssh.authorizedKeys.keys = [ 
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF5bF5Y8R/JujlOtA9zbb68bl57zlnYKhzZBlCVUXX6H" 
 	"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINf4NO9mercmjLE+VOX8Fu+cpmXbrF4fLVx2785Pw9hR"
