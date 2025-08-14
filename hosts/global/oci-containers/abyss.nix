@@ -1,5 +1,5 @@
 # Auto-generated using compose2nix v0.3.1.
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   # Runtime
@@ -12,9 +12,7 @@
   # Containers
   virtualisation.oci-containers.containers."abyss-paste" = {
     image = "ghcr.io/jabuxas/abyss:latest";
-    environmentFiles = [
-      "/data/abyss/.env"
-    ];
+    environmentFiles = [ config.sops.secrets.abyss_environment.path ];
     volumes = [
       "/data/abyss/custom:/app/assets:ro"
       "/data/abyss/files:/app/files:rw"

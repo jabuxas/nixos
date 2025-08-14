@@ -13,7 +13,7 @@
     authKeyFile = "/data/tailscale/keyfile";
     useRoutingFeatures = "server";
     openFirewall = true;
-    extraUpFlags = [ "--advertise-exit-node" ];
+    extraUpFlags = [ "--advertise-exit-node" "--advertise-routes=10.10.10.0/24" ];
   };
 
   users.users.you.openssh.authorizedKeys.keys = [ 

@@ -1,5 +1,5 @@
 # Auto-generated using compose2nix v0.3.1.
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   # Runtime
@@ -12,9 +12,7 @@
   # Containers
   virtualisation.oci-containers.containers."homarr" = {
     image = "ghcr.io/homarr-labs/homarr:latest";
-    environmentFiles = [
-      "/data/homarr/.env"
-    ];
+    environmentFiles = [ config.sops.secrets.homarr_environment.path ];
     volumes = [
       "/data/homarr/homarr/appdata:/appdata:rw"
       "/var/run/docker.sock:/var/run/docker.sock:rw"
