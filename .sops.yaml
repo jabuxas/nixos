@@ -1,5 +1,5 @@
 creation_rules:
-  - path_regex: secrets.yaml$
+  - path_regex: hosts/global/secrets/.*\.env$
     key_groups:
       - age:
           - "age1tqs7lhtlj788e8a7h34p49s2wqlhft24zwugyrcstg66xffev9gsjssl2y"

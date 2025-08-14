@@ -9,7 +9,7 @@
     ../../hosts/global/server
     ../../hosts/global/utils
     ../../hosts/global/virtual
-    ../../hosts/global/secrets.nix
+    ../../hosts/global/secrets
 
     # Host-specific (hardware, boot, networking, arion)
     ./hardware.nix
