@@ -45,9 +45,9 @@
     extraNfsdConfig = '''';
   };
   services.nfs.server.exports = ''
-    /export         10.10.10.0/24(rw,fsid=0,no_subtree_check)
-    /export/random  10.10.10.0/24(rw,nohide,insecure,no_subtree_check)
-    /export/torrent 10.10.10.0/24(rw,nohide,insecure,no_subtree_check)
+    /export         10.10.10.0/24(rw,fsid=0,no_subtree_check) 100.68.68.0/24(rw,fsid=0,no_subtree_check)
+    /export/random  10.10.10.0/24(rw,nohide,insecure,no_subtree_check) 100.68.68.0/24(rw,nohide,insecure,no_subtree_check)
+    /export/torrent 10.10.10.0/24(rw,nohide,insecure,no_subtree_check) 100.68.68.0/24(rw,nohide,insecure,no_subtree_check)
   '';
     
 }
