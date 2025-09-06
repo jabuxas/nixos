@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url =         "github:nixos/nixpkgs?ref=nixos-unstable";
     chaotic.url =         "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    copyparty.url =       "github:9001/copyparty";
 
     compose2nix = {
       url = "github:aksiksi/compose2nix";
@@ -16,9 +17,10 @@
     };
   };
 
-  outputs = { self, nixpkgs, chaotic, sops-nix, ... }: {
+  outputs = { self, nixpkgs, chaotic, sops-nix, copyparty, ... }: {
     nixosConfigurations.frigid = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit copyparty; };
       modules = [
         chaotic.nixosModules.nyx-cache
         chaotic.nixosModules.nyx-overlay

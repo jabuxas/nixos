@@ -16,6 +16,7 @@
     ./boot.nix
     ./networking.nix
     ./oci-containers.nix
+    ./copyparty.nix
   ]; 
 
   # Code name assigned to host name

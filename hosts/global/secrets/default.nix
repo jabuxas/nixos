@@ -20,6 +20,15 @@
         group = "root";
         mode = "0400";
       };
+
+      "copyparty_password" = {
+        sopsFile = ../secrets/copyparty.yaml;
+        format = "yaml";
+        owner = "you";
+        group = "users";
+        mode = "0400";
+        path = "/run/keys/copyparty/password";
+      };
     };
   };
 }
