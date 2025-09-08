@@ -21,7 +21,8 @@
       rproxy = 1;
     };
     accounts = {
-      lucas.passwordFile = config.sops.secrets."copyparty_password".path;
+      lucas.passwordFile = config.sops.secrets."copyparty_main_password".path;
+      friend.passwordFile = config.sops.secrets."copyparty_friend_password".path;
     };
 
     volumes = {
@@ -45,6 +46,7 @@
         path = "/export/random";
         access = {
           r = "*";
+          rwd = [ "friend" ];
           A = [ "lucas" ];
         };
         flags = {

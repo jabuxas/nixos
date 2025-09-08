@@ -13,6 +13,7 @@
     gcc
     lazygit
     lazydocker
+    dysk
   ];
 
   programs.fish.enable = true;
