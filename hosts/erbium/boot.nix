@@ -25,6 +25,8 @@
       "rootwait"
       "usbcore.autosuspend=-1"
       "mitigations=off"
+      "button.lid_init_state=open"
+      "acpi_sleep=nonvs"
     ];
   };
 }

@@ -3,6 +3,12 @@
   hardware.enableRedistributableFirmware = true;
   hardware.graphics.enable = true;
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "ignore";
+    HandleLidSwitchDocked = "ignore";
+    HandleLidSwitchExternalPower = "ignore";
+  };
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/fbfcd453-924f-4086-99cd-63dcfa21b3a2";
     fsType = "xfs";
