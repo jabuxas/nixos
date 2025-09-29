@@ -7,8 +7,10 @@
     ./dashdot.nix
     ./watchtower.nix
     ./refinement.nix
-    ./tailscale.nix
+
+    # setup dependant
     ./nginx.nix
+    ./tailscale.nix
     ./homarr.nix
 
     # data dependant
@@ -17,6 +19,7 @@
     ./immich.nix
     ./kavita.nix
     ./syncthing.nix
+    ./copyparty.nix
 
     # ../../hosts/global/oci-containers/openbooks.nix
     # ../../hosts/global/oci-containers/calibre.nix

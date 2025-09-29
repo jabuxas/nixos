@@ -27,7 +27,7 @@
 
     volumes = {
       "/private" = {
-        path = "/export/private";
+        path = "/netindev/private";
         access = {
           A = [ "lucas" ];
         };
@@ -43,7 +43,7 @@
         };
       };
       "/" = {
-        path = "/export/random";
+        path = "/netindev/misc";
         access = {
           r = "*";
           rwd = [ "friend" ];

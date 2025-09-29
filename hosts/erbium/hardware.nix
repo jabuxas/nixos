@@ -9,11 +9,11 @@
     options = [ "noatime" ];
   };
 
-  #fileSystems."/data" = {
-  #  device = "/dev/disk/by-uuid/0bd928fa-14f8-4862-90a0-79494889038c";
-  #  fsType = "ext4";
-  #  options = [ "defaults" ];
-  #};
+  fileSystems."/netindev" = {
+   device = "/dev/disk/by-uuid/0bd928fa-14f8-4862-90a0-79494889038c";
+   fsType = "ext4";
+   options = [ "defaults" ];
+  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/06F7-85E1";
@@ -29,16 +29,4 @@
     }
   ];
 
-  # NFS setup
-
-  #fileSystems."/export/torrent" = {
-  #  device = "/data/downloads";
-  #  options = [ "bind" ];
-  #};
-
-  #fileSystems."/export/random" = {
-  #  device = "/data/random";
-  #  options = [ "bind" ];
-  #};
-    
 }
