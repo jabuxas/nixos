@@ -29,6 +29,17 @@
         ./hosts/frigid
       ];
     };
+    nixosConfigurations.erbium = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit copyparty; };
+      modules = [
+        chaotic.nixosModules.nyx-cache
+        chaotic.nixosModules.nyx-overlay
+        chaotic.nixosModules.nyx-registry
+        sops-nix.nixosModules.sops
+        ./hosts/erbium
+      ];
+    };
   };
 
 }
