@@ -7,14 +7,13 @@
     ../../hosts/global/server
     ../../hosts/global/utils
     ../../hosts/global/virtual
-    # ../../hosts/global/secrets
+    ../../hosts/global/secrets
 
     # Host-specific (hardware, boot, networking, arion)
     ./hardware.nix
     ./boot.nix
     ./networking.nix
-    ./oci-containers.nix
-    # ./copyparty.nix
+    ./services
   ]; 
 
   # Code name assigned to host name

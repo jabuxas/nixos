@@ -2,7 +2,8 @@
 
 {
   sops = {
-    age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    # age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+    age.keyFile = "/home/you/age.key";
     
     secrets = {
       "abyss_environment" = {
