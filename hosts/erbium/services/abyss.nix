@@ -14,7 +14,6 @@
     image = "ghcr.io/jabuxas/abyss:latest";
     environmentFiles = [ config.sops.secrets.abyss_environment.path ];
     volumes = [
-      "/home/you/services/abyss/custom:/app/assets:ro"
       "/home/you/services/abyss/files:/app/files:rw"
     ];
     ports = [
