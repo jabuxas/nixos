@@ -19,6 +19,7 @@
     ports = [
       "3235:3235/tcp"
     ];
+    user = "1000:1000";
     log-driver = "journald";
     extraOptions = [
       "--network-alias=paste"
