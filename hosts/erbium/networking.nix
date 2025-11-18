@@ -24,6 +24,9 @@
 
       # copyparty
       3923
+
+      # web
+      3000
     ];
 
     firewall.allowedUDPPorts = [ 
