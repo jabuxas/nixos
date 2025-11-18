@@ -6,7 +6,8 @@
     ./dozzle.nix
     ./dashdot.nix
     ./watchtower.nix
-    ./refinement.nix
+    # ./refinement.nix
+    ./web.nix
 
     # setup dependant
     ./nginx.nix
