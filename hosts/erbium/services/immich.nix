@@ -133,7 +133,7 @@
       "UPLOAD_LOCATION" = "./library";
     };
     volumes = [
-      "/home/you/services/immich/library:/usr/src/app/upload:rw"
+      "/netindev/immich_lib/library:/usr/src/app/upload:rw"
       "/etc/localtime:/etc/localtime:ro"
     ];
     ports = [

@@ -21,6 +21,12 @@
    options = [ "defaults" ];
   };
 
+  fileSystems."/seagate" = {
+   device = "/dev/disk/by-uuid/f59ffc60-fcea-4582-9a8b-b5b9cd027754";
+   fsType = "ext4";
+   options = [ "defaults" ];
+  };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/06F7-85E1";
     fsType = "vfat";
