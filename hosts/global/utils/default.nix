@@ -6,8 +6,7 @@
     neovim
     tree
     eza
-    bat
-    btop   
+    btop
     fd
     ripgrep
     gcc
