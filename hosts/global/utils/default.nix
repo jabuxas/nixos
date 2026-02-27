@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     dash
     fish
-    neovim
     tree
     eza
     btop
@@ -11,10 +10,9 @@
     ripgrep
     gcc
     lazygit
-    lazydocker
-    dysk
+    chezmoi
+    age
   ];
 
   programs.fish.enable = true;
-  
 }

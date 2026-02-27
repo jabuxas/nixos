@@ -1,9 +1,8 @@
 {
-  description = "but a craven";
+  description = "and yet, we seek it, insatiably. such is our fate.";
 
   inputs = {
     nixpkgs.url =         "github:nixos/nixpkgs?ref=nixos-unstable";
-    chaotic.url =         "github:chaotic-cx/nyx/nyxpkgs-unstable";
     copyparty.url =       "github:9001/copyparty";
 
     compose2nix = {
@@ -17,27 +16,21 @@
     };
   };
 
-  outputs = { self, nixpkgs, chaotic, sops-nix, copyparty, ... }: {
+  outputs = { self, nixpkgs, sops-nix, copyparty, ... }: {
     nixosConfigurations.frigid = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit copyparty; };
       modules = [
-        chaotic.nixosModules.nyx-cache
-        chaotic.nixosModules.nyx-overlay
-        chaotic.nixosModules.nyx-registry
         sops-nix.nixosModules.sops
         ./hosts/frigid
       ];
     };
-    nixosConfigurations.erbium = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.threnwick = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit copyparty; };
       modules = [
-        chaotic.nixosModules.nyx-cache
-        chaotic.nixosModules.nyx-overlay
-        chaotic.nixosModules.nyx-registry
         sops-nix.nixosModules.sops
-        ./hosts/erbium
+        ./hosts/threnwick
       ];
     };
   };

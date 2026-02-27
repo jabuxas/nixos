@@ -7,7 +7,7 @@
         "history" = "24h";
       };
       web = {
-        "allow connections from" = "localhost 192.168.1.* 172.24.0.*";
+        "allow connections from" = "localhost 192.168.1.* 172.24.0.* 10.10.10.*";
       };
     };
   };

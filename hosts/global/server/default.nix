@@ -1,13 +1,17 @@
-{ ... }:{
+{ pkgs, ... }:{
 
   services.openssh = {
     enable = true;
     settings = {
       PermitRootLogin = "no";
       LogLevel = "ERROR";
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      AllowUsers = [ "you" ];
     };
-  };
 
+    extraConfig = "StreamLocalBindUnlink yes";
+  };
 
   users.users.you.openssh.authorizedKeys.keys = [ 
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF5bF5Y8R/JujlOtA9zbb68bl57zlnYKhzZBlCVUXX6H"
@@ -17,6 +21,13 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIQSBaFawMZwG6y+NDxBHY9cv2QqekNZIeOqw0eC4WHH cardno:16_730_169"
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIEEnhRLYZImR0dPjqMn/HdkUIv+ErxHIq+fM01w3VQELAAAABHNzaDo= ssh:"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLXTPD4WAjiRYUDym0FArTKAYDpVq/qp23WEkCV6oDtUsFPH9c9ylW0yfYamg+RjYXLZku68OlEtU4D2FSYjsP4="
- ];
+  ];
+
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    enableExtraSocket = true;
+    pinentryPackage = pkgs.pinentry-curses;
+  };
 
 }

@@ -1,29 +1,25 @@
 { ... }: {
 
   imports = [
-
-    # non data dependant
+    # stateless
     ./dozzle.nix
     ./dashdot.nix
     ./watchtower.nix
-    # ./refinement.nix
     ./web.nix
+    ./netdata.nix
+    ./cockpit.nix
 
-    # setup dependant
+    # stateful setup
     ./nginx.nix
     ./tailscale.nix
-    ./homarr.nix
 
-    # data dependant
+    # stateful setup + data
     ./abyss.nix
     ./qbittorrent.nix
     ./immich.nix
     ./kavita.nix
     ./syncthing.nix
     ./copyparty.nix
-
-    # ../../hosts/global/oci-containers/openbooks.nix
-    # ../../hosts/global/oci-containers/calibre.nix
   ];
 
 }

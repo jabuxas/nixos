@@ -5,14 +5,20 @@
     compose2nix
   ];
 
-  virtualisation.docker.enable = true;
-  virtualisation.docker.autoPrune.enable = true;
-  virtualisation.docker.storageDriver = "overlay2";
+  virtualisation.docker = {
+    enable        = true;
+    enableOnBoot  = true;
+    liveRestore   = true;
+    logDriver     = "journald";
+    storageDriver = "overlay2";
 
-  # virtualisation.docker.daemon.settings = {
-  #   data-root = "/data/docker";
-  # };
+    autoPrune = {
+        enable     = true;
+        dates      = "weekly";
+        flags      = [ "--all" ];
+        persistent = true;
+    };
+  };
 
   users.users.you.extraGroups = [ "docker" ];
-
 }

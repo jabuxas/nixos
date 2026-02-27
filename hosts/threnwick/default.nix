@@ -1,5 +1,5 @@
 { ... }:{
-      
+
   imports = [
     ../../hosts/global
 
@@ -9,20 +9,14 @@
     ../../hosts/global/virtual
     ../../hosts/global/secrets
 
-    # Host-specific (hardware, boot, networking, arion)
+    # Host-specific (hardware, boot, networking, docker services)
     ./hardware.nix
     ./boot.nix
     ./networking.nix
     ./services
-  ]; 
+  ];
 
-  # Code name assigned to host name
-  networking.hostName = "erbium";
-
-  # Timezone set to the host's location in Peru, Lima
+  networking.hostName = "threnwick";
   time.timeZone = "America/Sao_Paulo";
-
-
   system.stateVersion = "25.05";
-
 }

@@ -14,14 +14,6 @@
         mode = "0400";
       };
       
-      "homarr_environment" = {
-        sopsFile = ../secrets/homarr.env;
-        format = "dotenv";
-        owner = "root";
-        group = "root";
-        mode = "0400";
-      };
-
       "copyparty_main_password" = {
         sopsFile = ../secrets/copyparty.yaml;
         format = "yaml";

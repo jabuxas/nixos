@@ -9,13 +9,11 @@
       extra-substituters = [
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
-        "https://chaotic-nyx.cachix.org"
       ];
       
       extra-trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       ];
 
       trusted-users = [ "root" "@wheel" ];
@@ -29,43 +27,19 @@
   };
     
   environment.systemPackages = with pkgs; [
+    curl
     wget
-    vim
+    neovim
     tmux
     git
     fastfetch
    ];
 
-  environment.variables.EDITOR = "vim";
-
-  system.activationScripts.vimrc.text = ''
-  mkdir -p /home/you/.config/vim
-  echo "set expandtab" > /home/you/.config/vim/vimrc
-  echo "set shiftwidth=2" >> /home/you/.config/vim/vimrc
-  echo "set softtabstop=2" >> /home/you/.config/vim/vimrc
-  chown you:users /home/you/.config/vim/vimrc
-
-  mkdir -p /root/.config/vim
-  echo "set expandtab" > /root/.config/vim/vimrc
-  echo "set shiftwidth=2" >> /root/.config/vim/vimrc
-  echo "set softtabstop=2" >> /root/.config/vim/vimrc
-  chown root:root /root/.config/vim/vimrc
-  '';
+  environment.variables.EDITOR = "nvim";
 
   virtualisation.docker.enable = true;
   
   services = {
-    ananicy = {
-      enable = true;
-      package = pkgs.ananicy-cpp;
-      rulesProvider = pkgs.ananicy-rules-cachyos_git;
-    };
-
-    scx = {
-      enable = true;
-      scheduler = "scx_lavd";
-    };
-    
     timesyncd = {
       enable = true;
       servers = [

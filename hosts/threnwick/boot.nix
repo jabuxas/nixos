@@ -20,7 +20,7 @@
       ];
     };
 
-    kernelPackages = lib.mkForce pkgs.linuxPackages_cachyos;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     kernelParams = lib.mkAfter [
       "rootwait"
       "usbcore.autosuspend=-1"
