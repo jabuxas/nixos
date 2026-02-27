@@ -8,6 +8,7 @@
       PasswordAuthentication = false;
       KbdInteractiveAuthentication = false;
       AllowUsers = [ "you" ];
+      AcceptEnv = ["LANG" "LC_*" "COLORTERM"];
     };
 
     extraConfig = "StreamLocalBindUnlink yes";
