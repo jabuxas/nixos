@@ -23,11 +23,15 @@
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBLXTPD4WAjiRYUDym0FArTKAYDpVq/qp23WEkCV6oDtUsFPH9c9ylW0yfYamg+RjYXLZku68OlEtU4D2FSYjsP4="
   ];
 
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    enableExtraSocket = true;
-    pinentryPackage = pkgs.pinentry-curses;
+  systemd.user.services.gpg-agent-socketdir = {
+    description = "create GPG agent socket directory";
+    wantedBy = [ "default.target" ];
+    before = [ "sockets.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.gnupg}/bin/gpgconf --create-socketdir";
+      RemainAfterExit = true;
+    };
   };
 
 }

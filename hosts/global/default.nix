@@ -33,6 +33,7 @@
     tmux
     git
     fastfetch
+    gnupg
    ];
 
   environment.variables.EDITOR = "nvim";
