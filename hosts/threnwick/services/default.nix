@@ -3,11 +3,11 @@
   imports = [
     # stateless
     ./dozzle.nix
-    ./dashdot.nix
+    # ./dashdot.nix
     ./watchtower.nix
     ./web.nix
-    ./netdata.nix
-    ./cockpit.nix
+    # ./netdata.nix
+    # ./cockpit.nix
 
     # stateful setup
     ./nginx.nix
@@ -15,9 +15,9 @@
 
     # stateful setup + data
     ./abyss.nix
-    ./qbittorrent.nix
+    # ./qbittorrent.nix
     ./immich.nix
-    ./kavita.nix
+    # ./kavita.nix
     ./syncthing.nix
     ./copyparty.nix
   ];
