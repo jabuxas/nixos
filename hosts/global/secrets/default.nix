@@ -29,6 +29,13 @@
         group = "users";
         mode = "0400";
       };
+      "cloudflare_ddns_env" = {
+        sopsFile = ../secrets/ddns.env;
+        format = "dotenv";
+        owner = "root";
+        group = "root";
+        mode = "0400";
+      };
     };
   };
 }

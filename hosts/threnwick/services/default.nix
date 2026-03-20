@@ -6,6 +6,7 @@
     # ./dashdot.nix
     ./watchtower.nix
     ./web.nix
+    ./ddns.nix
     # ./netdata.nix
     # ./cockpit.nix
 
