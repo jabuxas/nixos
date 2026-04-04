@@ -12,7 +12,7 @@
 
     # stateful setup
     ./nginx.nix
-    ./tailscale.nix
+    # ./tailscale.nix
 
     # stateful setup + data
     ./abyss.nix
