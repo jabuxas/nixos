@@ -17,7 +17,7 @@
     settings = {
       i = "0.0.0.0";
       "xff-hdr" = "X-Forwarded-For";
-      "xff-src" = "172.24.0.0/16";
+      "xff-src" = "172.16.0.0/12";
       rproxy = 1;
     };
     accounts = {
