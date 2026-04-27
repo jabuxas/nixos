@@ -17,7 +17,7 @@
       "PUID" = "1000";
     };
     volumes = [
-      "/seagate/services/sync:/var/syncthing:rw"
+      "/netindev/services/sync:/var/syncthing:rw"
     ];
     ports = [
       "8384:8384/tcp"
