@@ -19,6 +19,7 @@
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIEEnhRLYZImR0dPjqMn/HdkUIv+ErxHIq+fM01w3VQELAAAABHNzaDo= ssh:"
     "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIMbG0GviGiPHqJiizGP611E0ZrVspJ6+l5kvRyHlmxzLAAAABHNzaDo= ssh:"
     "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFSIpSQBTRAlVBHPbUntdk1WrdDkURrkSd3T6wlsuT0k7LE1KIibSvu/L157jkUF75ghUlNjlaHTYZGFe5cvOqQ="
+    "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHIdoInkJvxCkF8ydl9PHMAKpzkC4f16uMVmhvtcJl2Hu+tluBN5bfvJBDrsKQK//eGXXV3vpXpYIZH4y6YxVn4="
   ];
 
   systemd.user.tmpfiles.rules = [
